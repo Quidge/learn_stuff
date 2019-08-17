@@ -2,8 +2,8 @@
 - `HT`: Hash Table
 - `slot`: HT index
 - `hash collision`: when two keys return the same value
-- 'HF': hash function
-- LL
+- `HF`: hash function
+- `LL`: linked list
 
 ### Random notes:
 - `dict` is Python's implementation of a hash table.
