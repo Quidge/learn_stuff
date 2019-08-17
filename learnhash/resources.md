@@ -1,0 +1,2 @@
+[Virginia Tech's CS page on hashing](https://research.cs.vt.edu/AVresearch/hashing/introduction.php)
+[Quora answer covering the 2 key functions in a hash map: a hash function and a mapping function](https://www.quora.com/How-do-I-create-my-own-hashing-function-for-use-in-a-look-up-table)

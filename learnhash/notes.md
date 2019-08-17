@@ -1,0 +1,1 @@
+Goal of hashing is to achieve constant time for operations (lookup, insert, delete).

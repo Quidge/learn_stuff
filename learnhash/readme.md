@@ -1,0 +1,1 @@
+# A project to wrap my head around hashing, hash ranges, and their implementations in python.
