@@ -24,7 +24,7 @@
       - give each of the original 1000 values a slot, and fill the rest of the slots with null
     2) create only 1000 slots and use a hash function that maps multiple keys to the same slot: `hashf(key1) = slot5 = hashf(key25)`
       - this will allow us to use a much smaller table (less memory) but it's now possible to have multiple keys access the same value. that is called a collision.
-- the birthday question is a great stats illustration[1](https://research.cs.vt.edu/AVresearch/hashing/hashfunc.php):
+- the birthday question is a great stats illustration [[1](https://research.cs.vt.edu/AVresearch/hashing/hashfunc.php)]:
   > To illustrate, consider a classroom full of students. What is the probability that some pair of students shares the same birthday (i.e., the same day of the year, not necessarily the same year)? If there are 23 students, then the odds are about even that two will share a birthday. This is despite the fact that there are 365 days in which students can have birthdays (ignoring leap years). On most days, no student in the class has a birthday. With more students, the probability of a shared birthday increases. The mapping of students to days based on their birthday is similar to assigning records to slots in a table (of size 365) using the birthday as a hash function.
 
 ### Hash functions
