@@ -1,14 +1,30 @@
 def plumages(birds):
     return [(bird['name'], plumage(bird)) for bird in birds]
 
+
 def speeds(birds):
     return [(bird['name'], air_speed_velocity(bird)) for bird in birds]
 
+
 def plumage(bird):
-    return Bird(**bird).plumage
+    b = createBird(**bird)
+    return b.plumage
+
 
 def air_speed_velocity(bird):
-    return Bird(**bird).air_speed_velocity
+    b = createBird(**bird)
+    return b.air_speed_velocity
+
+
+def createBird(**kwargs):
+    if kwargs['type'] == 'EuropeanSwallow':
+        return EuropeanSwallow(**kwargs)
+    elif kwargs['type'] == 'AfricanSwallow':
+        return AfricanSwallow(**kwargs)
+    elif kwargs['type'] == 'NorwegianBlueParrot':
+        return NorwegianBlueParrot(**kwargs)
+    else:
+        return Bird(**kwargs)
 
 class Bird:
     def __init__(self, **kwargs):
@@ -35,5 +51,15 @@ class Bird:
             return 0 if self.isNailed else 10 + int(self.voltage / 10)
         else:
             return None
-    
-    
+
+
+class EuropeanSwallow(Bird):
+    pass
+
+
+class AfricanSwallow(Bird):
+    pass
+
+
+class NorwegianBlueParrot(Bird):
+    pass
