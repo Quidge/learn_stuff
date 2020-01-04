@@ -5,21 +5,35 @@ def speeds(birds):
     return [(bird['name'], air_speed_velocity(bird)) for bird in birds]
 
 def plumage(bird):
-    if bird['type'] == 'EuropeanSwallow':
-        return 'average'
-    elif bird['type'] == 'AfricanSwallow':
-        return 'tired' if bird['numberOfCoconuts'] > 2 else 'average'
-    elif bird['type'] == 'NorwegianBlueParrot':
-        return 'scorched' if bird['voltage'] > 100 else 'beautiful'
-    else:
-        return 'unknown'
+    return Bird(**bird).plumage
 
 def air_speed_velocity(bird):
-    if bird['type'] == 'EuropeanSwallow':
-        return 35
-    elif bird['type'] == 'AfricanSwallow':
-        return 40 - 2 * bird['numberOfCoconuts']
-    elif bird['type'] == 'NorwegianBlueParrot':
-        return 0 if bird['isNailed'] else 10 + int(bird['voltage'] / 10)
-    else:
-        return None
+    return Bird(**bird).air_speed_velocity
+
+class Bird:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
+    @property
+    def plumage(self):
+        if self.type == 'EuropeanSwallow':
+            return 'average'
+        elif self.type == 'AfricanSwallow':
+            return 'tired' if self.numberOfCoconuts > 2 else 'average'
+        elif self.type == 'NorwegianBlueParrot':
+            return 'scorched' if self.voltage > 100 else 'beautiful'
+        else:
+            return 'unknown'
+
+    @property
+    def air_speed_velocity(self):
+        if self.type == 'EuropeanSwallow':
+            return 35
+        elif self.type == 'AfricanSwallow':
+            return 40 - 2 * self.numberOfCoconuts
+        elif self.type == 'NorwegianBlueParrot':
+            return 0 if self.isNailed else 10 + int(self.voltage / 10)
+        else:
+            return None
+    
+    
