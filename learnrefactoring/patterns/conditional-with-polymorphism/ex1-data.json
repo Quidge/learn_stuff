@@ -1,0 +1,30 @@
+{
+  "birds": [
+    {
+      "type": "EuropeanSwallow",
+      "name": "Bucky"
+    },
+    {
+      "type": "AfricanSwallow",
+      "numberOfCoconuts": 3,
+      "name": "Remus"
+    },
+    {
+      "type": "AfricanSwallow",
+      "numberOfCoconuts": 1,
+      "name": "Adrian"
+    },
+    {
+      "type": "NorwegianBlueParrot",
+      "isNailed": true,
+      "voltage": 200,
+      "name": "Alex"
+    },
+    {
+      "type": "NorwegianBlueParrot",
+      "isNailed": false,
+      "voltage": 50,
+      "name": "Al"
+    }
+  ]
+}
